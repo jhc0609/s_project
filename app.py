@@ -4,8 +4,6 @@ from flask_restx import Api, Resource, fields
 
 client = MongoClient('mongodb://test:test@3.38.94.94', 27017)
 
-client = MongoClient('mongodb://localhost:5000, 27017')
-
 db = client.project
 
 app = Flask(__name__)
@@ -34,8 +32,6 @@ model = api.model('Metadata Model',
                                            description="type of the metadata",
                                            help="can be blank."),
                   })
-
-members = dict()
 
 
 @ns.route("/")
